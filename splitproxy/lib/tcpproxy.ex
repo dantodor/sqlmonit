@@ -1,9 +1,9 @@
 require Logger
-import Shoeboat.AddressUtil
+import SplitProxy.AddressUtil
 
-defmodule Shoeboat.TCPProxy do
+defmodule SplitProxy.TCPProxy do
   use GenServer
-  alias Shoeboat.ProxyDelegate
+  alias SplitProxy.ProxyDelegate
 
   defmodule ProxyState do
     defstruct(

@@ -1,8 +1,8 @@
-defmodule Shoeboat.Mixfile do
+defmodule SplitProxy.Mixfile do
   use Mix.Project
 
   def project do
-    [app: :shoeboat,
+    [app: :splitproxy,
      version: "0.1.0",
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
@@ -17,7 +17,7 @@ defmodule Shoeboat.Mixfile do
 
   def application do
     [
-      mod: {Shoeboat.Application, []},
+      mod: {SplitProxy.Application, []},
       extra_applications: [:logger]
     ]
   end

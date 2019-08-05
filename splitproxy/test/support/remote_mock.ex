@@ -1,4 +1,4 @@
-defmodule ShoeboatTest.RemoteMock do
+defmodule SplitProxyTest.RemoteMock do
   def spawn_remote(port) do
     spawn_link(fn -> start_remote(port) end)
   end

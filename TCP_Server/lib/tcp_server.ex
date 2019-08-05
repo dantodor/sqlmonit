@@ -50,14 +50,16 @@ defmodule TcpServer do
 
       {:tcp, aSocket, binaryMsg} ->
         IO.inspect byte_size(binaryMsg)
+        <<ptype , status, psize::size(16), _rest::binary>> = binaryMsg
+        IO.puts "Packet type: #{ptype}"
+        IO.puts "Packet status: #{status}"
+        IO.puts "Packet size: #{Integer.to_string psize}"
         IO.inspect(binaryMsg)
         handler(aSocket)
     end
   end
 
-  @doc """
-  defines a socket port
-  """
+
   defp port do
     9000
   end

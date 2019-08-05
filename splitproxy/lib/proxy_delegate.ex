@@ -1,7 +1,7 @@
 require Logger
-import Shoeboat.AddressUtil
+import SplitProxy.AddressUtil
 
-defmodule Shoeboat.ProxyDelegate do
+defmodule SplitProxy.ProxyDelegate do
 
   def start_proxy_loop(downstream_socket, upstream_socket, upstream_socket2) do
     {:ok, downstream_peer} = :inet.peername(downstream_socket)

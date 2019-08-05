@@ -1,11 +1,11 @@
-require ShoeboatTest.RemoteMock
-defmodule ShoeboatTest do
+require SplitProxyTest.RemoteMock
+defmodule SplitProxyTest do
   use ExUnit.Case
 
   setup do
-    {:ok, server_pid} = Shoeboat.TCPProxy.start_link(
+    {:ok, server_pid} = SplitProxy.TCPProxy.start_link(
       4040, "localhost:8080", 5, :client_table)
-    ShoeboatTest.RemoteMock.spawn_remote(8080)
+    SplitProxyTest.RemoteMock.spawn_remote(8080)
     {:ok, server_pid: server_pid}
   end
 

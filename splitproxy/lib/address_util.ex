@@ -1,4 +1,4 @@
-defmodule Shoeboat.AddressUtil do
+defmodule SplitProxy.AddressUtil do
   def split_host_and_port(input) do
     parts = String.split(input, ":")
     {Enum.at(parts, 0), Enum.at(parts, 1)}

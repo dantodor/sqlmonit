@@ -1,4 +1,4 @@
-defmodule Shoeboat.Application do
+defmodule SplitProxy.Application do
   use Application
 
   def start(_type, _args) do
@@ -9,7 +9,7 @@ defmodule Shoeboat.Application do
     )
 
     children = [
-      worker(Shoeboat.TCPProxy, [
+      worker(SplitProxy.TCPProxy, [
         opts[:listen] || 4040,
         opts[:host] || "127.0.0.1:1433",
         opts[:host2] || "127.0.0.1:9000",
@@ -17,7 +17,7 @@ defmodule Shoeboat.Application do
         :tcp_proxy_clients])
     ]
 
-    opts = [strategy: :one_for_one, name: Shoeboat.Supervisor]
+    opts = [strategy: :one_for_one, name: SplitProxy.Supervisor]
     Supervisor.start_link(children, opts)
   end
 end
